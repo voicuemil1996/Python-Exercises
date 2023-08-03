@@ -11,13 +11,16 @@ Examples:
 
 
 def reverse_words(input_string):
-
     words_list = input_string.split()
+    output_string = ""
     for word_index, word in enumerate(words_list):
         if len(word) > 5:
-            words_list[word_index] = word[::-1]
+            output_string += word[::-1]
+        else:
+            output_string += word
+        output_string += ' '
 
-    return ' '.join(words_list)
+    return output_string.rstrip()
 
 
 assert reverse_words("Hey fellow warriors") == "Hey wollef sroirraw"
